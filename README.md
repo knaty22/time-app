@@ -1,32 +1,35 @@
-# React + TypeScript + Vite
+# FullTote — Build order A/B prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Two interactive prototypes of the **Build order** critical job for the Grand Lake
+Farmers Market (FullTote UX capstone). Used for an A/B usability test.
 
-Currently, two official plugins are available:
+| Route | Option | Approach |
+| ----- | ------ | -------- |
+| `/`   | Home   | Explains the test, links to both options |
+| `/a`  | Option A | **Unified Grid** — one category-filtered product grid across every vendor |
+| `/b`  | Option B | **Guided Builder** — a 3-step wizard: categories → items → review |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Both options support the two P1 tasks from the Build order job card:
 
-## React Compiler
+1. **Add items from 2 vendors to one cart.**
+2. **Check cart contents across vendors before payment.**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+See [`BUILD_PLAN.md`](./BUILD_PLAN.md) for scope, decisions, and the exact test paths.
 
-## Expanding the Oxlint configuration
+## Run locally
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Tech
+
+Vite + React + TypeScript. Client-side routing (`react-router-dom`). Cart state in
+React context, persisted to `localStorage`; **carts for A and B are separate**.
+No backend, no real payment — "Place order" is a stub confirmation screen.
+
+## Deploy
+
+Auto-deploys to Vercel on push to `main`. `vercel.json` rewrites all paths to
+`index.html` so deep links to `/a`, `/b`, `/a/cart` work.
