@@ -4,10 +4,12 @@ import type { CartTotals } from '../cart/selectors'
 interface OrderConfirmationProps {
   totals: CartTotals
   onStartOver: () => void
+  /** where "Back to start" links — this option's own homepage */
+  homeTo: string
 }
 
 /** Stub "order placed" screen (decision D4 — no real payment). */
-export function OrderConfirmation({ totals, onStartOver }: OrderConfirmationProps) {
+export function OrderConfirmation({ totals, onStartOver, homeTo }: OrderConfirmationProps) {
   return (
     <div className="confirm">
       <div className="confirm__check" aria-hidden="true">
@@ -23,7 +25,7 @@ export function OrderConfirmation({ totals, onStartOver }: OrderConfirmationProp
         <button type="button" className="btn btn--ghost" onClick={onStartOver}>
           Start over
         </button>
-        <Link to="/" className="btn btn--primary">
+        <Link to={homeTo} className="btn btn--primary">
           Back to start
         </Link>
       </div>

@@ -1,0 +1,51 @@
+.ahome {
+  padding: 32px 20px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ahome__title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 8px 0 8px;
+}
+
+.ahome__tagline {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.ahome__tasks {
+  padding: 16px 18px;
+  background: var(--primary-soft);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+
+.ahome__tasks-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ahome__tasks ol {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.ahome__tasks li + li {
+  margin-top: 6px;
+}
+
+.ahome__start {
+  margin-bottom: 16px;
+}
+
+.ahome__switch {
+  align-self: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}

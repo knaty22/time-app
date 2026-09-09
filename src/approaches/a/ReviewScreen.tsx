@@ -22,7 +22,14 @@ export function ReviewScreen() {
       <PhoneFrame>
         <AppHeader title="Order placed" />
         <div className="phone__scroll">
-          <OrderConfirmation totals={totals} onStartOver={() => { clear(); setPlaced(false) }} />
+          <OrderConfirmation
+            totals={totals}
+            homeTo="/a"
+            onStartOver={() => {
+              clear()
+              setPlaced(false)
+            }}
+          />
         </div>
       </PhoneFrame>
     )
@@ -31,10 +38,10 @@ export function ReviewScreen() {
   if (groups.length === 0) {
     return (
       <PhoneFrame>
-        <AppHeader title="Review order" backTo="/a" backLabel="Back to shop" />
+        <AppHeader title="Review order" backTo="/a/shop" backLabel="Back to shop" />
         <div className="phone__scroll">
           <p className="a-empty">
-            Nothing to review. <Link to="/a">Browse the market →</Link>
+            Nothing to review. <Link to="/a/shop">Browse the market →</Link>
           </p>
         </div>
       </PhoneFrame>

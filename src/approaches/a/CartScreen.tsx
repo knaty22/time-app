@@ -16,12 +16,12 @@ export function CartScreen() {
 
   return (
     <PhoneFrame>
-      <AppHeader title="Your cart" backTo="/a" backLabel="Keep shopping" />
+      <AppHeader title="Your cart" backTo="/a/shop" backLabel="Keep shopping" />
 
       <div className="phone__scroll">
         {groups.length === 0 ? (
           <p className="a-empty">
-            Your cart is empty. <Link to="/a">Browse the market →</Link>
+            Your cart is empty. <Link to="/a/shop">Browse the market →</Link>
           </p>
         ) : (
           <>

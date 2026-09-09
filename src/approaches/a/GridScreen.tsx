@@ -33,7 +33,7 @@ export function GridScreen() {
 
   return (
     <PhoneFrame>
-      <AppHeader title="Shop the whole market" />
+      <AppHeader title="Shop the whole market" backTo="/a" backLabel="Option A" />
 
       <div className="a-toolbar">
         <input

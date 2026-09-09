@@ -42,6 +42,7 @@ export function WizardScreen() {
         <div className="phone__scroll">
           <OrderConfirmation
             totals={totals}
+            homeTo="/b"
             onStartOver={() => {
               clear()
               setChosen([])
@@ -164,7 +165,7 @@ export function WizardScreen() {
               Back
             </button>
           ) : (
-            <Link to="/" className="btn btn--ghost">
+            <Link to="/b" className="btn btn--ghost">
               Exit
             </Link>
           )}
@@ -198,7 +199,7 @@ function WizardHeader({ step }: { step: StepIndex }) {
     <header className="b-head">
       <div className="b-head__row">
         <span className="kicker">Step {step + 1} of 3</span>
-        <Link to="/" className="b-head__cancel">
+        <Link to="/b" className="b-head__cancel">
           Cancel
         </Link>
       </div>
