@@ -4,22 +4,23 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 import './styles/base.css'
 import { CartProvider } from './cart/CartContext'
-import { Home } from './routes/Home'
 import { ApproachHome } from './routes/ApproachHome'
 import { GridScreen } from './approaches/a/GridScreen'
 import { CartScreen } from './approaches/a/CartScreen'
 import { ReviewScreen } from './approaches/a/ReviewScreen'
 import { WizardScreen } from './approaches/b/WizardScreen'
 
+// No shared homepage. Each option is a fully separate experience under its own
+// route prefix; a test participant only ever sees one variant. "/" just falls
+// through to Option A so a bare visit doesn't error.
 const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
+  { path: '/', element: <Navigate to="/a" replace /> },
 
   // Option A — Unified Grid
   {
     path: '/a',
     element: (
       <ApproachHome
-        option="A"
         name="Unified Grid"
         tagline="One product grid across every Grand Lake Farmers Market vendor. Filter by category and tap to add — your cart keeps everything together for one pickup."
         startTo="/a/shop"
@@ -36,7 +37,6 @@ const router = createBrowserRouter([
     path: '/b',
     element: (
       <ApproachHome
-        option="B"
         name="Guided Builder"
         tagline="A short step-by-step: pick the categories you're shopping for, choose items across every vendor, then review the whole order before you place it."
         startTo="/b/build"
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
   },
   { path: '/b/build', element: <WizardScreen /> },
 
-  { path: '*', element: <Navigate to="/" replace /> },
+  { path: '*', element: <Navigate to="/a" replace /> },
 ])
 
 createRoot(document.getElementById('root')!).render(

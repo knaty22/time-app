@@ -40,12 +40,5 @@
 }
 
 .ahome__start {
-  margin-bottom: 16px;
-}
-
-.ahome__switch {
-  align-self: center;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
+  margin-bottom: 0;
 }

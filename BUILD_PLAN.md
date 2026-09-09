@@ -8,13 +8,12 @@
 
 ## 1. What we are building
 
-One React web app. A shared chooser plus a **self-contained experience per
-option** — each approach has its own homepage so a participant sent to one
-variant never sees the other:
+One React web app, but the two options are **fully separate experiences** —
+each approach has its own homepage and neither links to the other, so a
+participant sent to one variant never sees the other. `/` redirects to `/a`.
 
 | Route | Screen | Source |
 |---|---|---|
-| `/`         | Shared chooser — explains the A/B test, links both options | new |
 | `/a`        | **Option A homepage** — intro + the 2 tasks + "Start shopping" | new |
 | `/a/shop`   | **Option A — Unified Grid** (Figma "Approach 2", node `6:2`) | Figma |
 | `/a/cart`, `/a/review` | Option A cart (by vendor) and review | Figma |

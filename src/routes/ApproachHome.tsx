@@ -3,7 +3,6 @@ import { PhoneFrame } from '../components/PhoneFrame'
 import './ApproachHome.css'
 
 interface ApproachHomeProps {
-  option: 'A' | 'B'
   name: string
   tagline: string
   /** where the "Start" button goes — the first screen of this option's flow */
@@ -12,10 +11,10 @@ interface ApproachHomeProps {
 }
 
 /**
- * Standalone entry screen for a single option. Each approach has its own so a
- * test participant assigned to one variant never sees the other.
+ * Standalone entry screen for a single option. Each approach has its own,
+ * with no link to the other — a test participant only ever sees one variant.
  */
-export function ApproachHome({ option, name, tagline, startTo, startLabel }: ApproachHomeProps) {
+export function ApproachHome({ name, tagline, startTo, startLabel }: ApproachHomeProps) {
   return (
     <PhoneFrame>
       <div className="phone__scroll ahome">
@@ -33,10 +32,6 @@ export function ApproachHome({ option, name, tagline, startTo, startLabel }: App
 
         <Link to={startTo} className="btn btn--primary btn--block ahome__start">
           {startLabel}
-        </Link>
-
-        <Link to="/" className="ahome__switch">
-          This is Option {option} · back to options
         </Link>
       </div>
     </PhoneFrame>
