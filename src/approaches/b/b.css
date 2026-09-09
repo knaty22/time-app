@@ -1,0 +1,241 @@
+/* ---- Option B: Guided Builder ---- */
+
+.b-head {
+  padding: 12px 20px 14px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.b-head__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.b-head__cancel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.b-steps {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.b-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.b-step:not(:last-child)::after {
+  content: '';
+  width: 14px;
+  height: 2px;
+  background: var(--border);
+  margin-left: 2px;
+}
+
+.b-step__dot {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+}
+
+.b-step__label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.b-step--active .b-step__dot {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.b-step--active .b-step__label {
+  color: var(--ink);
+  font-weight: 600;
+}
+.b-step--done .b-step__dot {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.b-step--done .b-step__label {
+  color: var(--ink);
+}
+
+.b-body {
+  padding: 18px 20px 24px;
+  background: var(--bg);
+}
+
+.b-q {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.b-sub {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.b-sub a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.b-cats {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.b-cat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 15px;
+}
+
+.b-cat--on {
+  border-color: var(--primary);
+  border-width: 1.5px;
+  background: var(--primary-soft);
+}
+
+.b-cat__name {
+  font-weight: 600;
+}
+
+.b-cat__mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0;
+}
+.b-cat--on .b-cat__mark {
+  opacity: 1;
+}
+
+.b-section {
+  margin-top: 18px;
+}
+.b-section .kicker {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.b-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 8px;
+}
+.b-item--on {
+  border-color: var(--primary);
+  border-width: 1.5px;
+}
+
+.b-item__check {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+.b-item--on .b-item__check {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.b-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.b-item__name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.b-item__meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.b-item__add {
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+}
+
+.b-foot {
+  position: sticky;
+  bottom: 0;
+  padding: 12px 20px calc(14px + env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 12px;
+}
+
+.b-foot__running {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+.b-foot__running strong {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.b-foot__btns {
+  display: flex;
+  gap: 10px;
+}
+.b-foot__btns > .btn--ghost {
+  flex: 0 0 auto;
+  min-width: 84px;
+}
+.b-foot__next {
+  flex: 1;
+}

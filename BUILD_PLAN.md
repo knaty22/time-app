@@ -8,13 +8,17 @@
 
 ## 1. What we are building
 
-One React web app with three routes:
+One React web app, but the two options are **fully separate experiences** —
+each approach has its own homepage and neither links to the other, so a
+participant sent to one variant never sees the other. `/` redirects to `/a`.
 
 | Route | Screen | Source |
 |---|---|---|
-| `/`  | Home — explains the A/B test, links to both options, lists the 2 tasks to try | new |
-| `/a` | **Option A — Unified Grid** (Figma "Approach 2 — Unified Grid", node `6:2`) | Figma |
-| `/b` | **Option B — Guided Builder** (Figma "Approach 4 — Guided Builder", node `10:2`) | Figma |
+| `/a`        | **Option A homepage** — intro + the 2 tasks + "Start shopping" | new |
+| `/a/shop`   | **Option A — Unified Grid** (Figma "Approach 2", node `6:2`) | Figma |
+| `/a/cart`, `/a/review` | Option A cart (by vendor) and review | Figma |
+| `/b`        | **Option B homepage** — intro + the 2 tasks + "Start building" | new |
+| `/b/build`  | **Option B — Guided Builder** (Figma "Approach 4", node `10:2`) | Figma |
 
 Figma file: `https://www.figma.com/design/0KTUBNGgdwOegBNVmnNjiR/` (frames `6:2` and `10:2`).
 
